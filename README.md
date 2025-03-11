@@ -1,8 +1,8 @@
 # Tugas3_Kelompok8
 
-Widya Nurul Sukma (2208107010054)
-Pryta Rosela (2208107010046)
-Mila Lestari (2208107010002)
+- Widya Nurul Sukma (2208107010054)
+- Pryta Rosela (2208107010046)
+- Mila Lestari (2208107010002)
 
 # Anime Characters API
 
