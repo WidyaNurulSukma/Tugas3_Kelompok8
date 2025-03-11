@@ -19,3 +19,28 @@ app.get("/", (req, res) => {
 app.get("/characters", (req, res) => {
     res.json({ data: characters });
 });
+
+// Mendapatkan satu karakter berdasarkan ID
+app.get("/characters/:id", (req, res) => {
+    const character = characters.find(c => c.id === parseInt(req.params.id));
+    if (!character) {
+        return res.status(404).json({ message: "Character not found" });
+    }
+    res.json(character);
+});
+
+// Menambahkan karakter baru
+app.post("/characters", (req, res) => {
+    const { name, age, anime } = req.body;
+    if (!name || !age || !anime) {
+        return res.status(400).json({ message: "All fields are required" });
+    }
+    const newCharacter = {
+        id: characters.length + 1,
+        name,
+        age,
+        anime
+    };
+    characters.push(newCharacter);
+    res.status(201).json(newCharacter);
+});
