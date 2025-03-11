@@ -18,7 +18,7 @@ Simple REST API using Express.js to manage anime characters.
 ## Installation
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-repo/anime-characters-api.git
+   git clone https://github.com/WidyaNurulSukma/Tugas3_Kelompok8.git
    ```
 2. Navigate to the project directory:
    ```sh
