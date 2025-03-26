@@ -4,48 +4,60 @@
 - Pryta Rosela (2208107010046)
 - Mila Lestari (2208107010002)
 
-# Anime Characters API
+# Anime Characters API  
 
-Simple REST API using Express.js to manage anime characters.
+Simple REST API using **Express.js** to manage anime characters.  
 
-## Features
-- Get all characters
-- Get a character by ID
-- Add a new character
-- Update a character by ID
-- Delete a character by ID
+## Features  
+✅ Get all characters  
+✅ Get a character by ID  
+✅ Add a new character  
+✅ Update a character by ID  
+✅ Delete a character by ID  
 
-## Installation
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/WidyaNurulSukma/Tugas3_Kelompok8.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd Tugas3_Kelompok8
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
+## Installation  
 
-## Usage
-1. Start the server:
-   ```sh
-   node index.js
-   ```
-2. The API will run on:
-   ```sh
-   http://localhost:3000
-   ```
-3. It will automatically open `http://localhost:3000/characters` in your browser.
-
-## API Endpoints
-### Get All Characters
-```http
-GET /characters
+Clone this repository:  
+```sh
+git clone https://github.com/WidyaNurulSukma/Tugas3_Kelompok8.git
 ```
-Response:
+
+Navigate to the project directory:  
+```sh
+cd Tugas3_Kelompok8
+```
+
+Install dependencies:  
+```sh
+npm install
+```
+
+## Usage  
+
+Start the server:  
+```sh
+node index.js
+```
+The API will run on:  
+```
+http://localhost:3000
+```
+
+You can test it by visiting:  
+```
+http://localhost:3000/characters
+```
+
+## API Endpoints  
+
+### 🔹 Get All Characters  
+**Method:** `GET`  
+**Endpoint:** `/characters`  
+**cURL Command:**  
+```sh
+curl -X GET http://localhost:3000/characters
+```
+**Response:**  
 ```json
 {
   "data": [
@@ -56,11 +68,14 @@ Response:
 }
 ```
 
-### Get a Character by ID
-```http
-GET /characters/:id
+### 🔹 Get a Character by ID  
+**Method:** `GET`  
+**Endpoint:** `/characters/:id`  
+**Example:** Get character with ID 1  
+```sh
+curl -X GET http://localhost:3000/characters/1
 ```
-Response:
+**Response:**  
 ```json
 {
   "id": 1,
@@ -70,40 +85,31 @@ Response:
 }
 ```
 
-### Add a New Character
-```http
-POST /characters
+### 🔹 Add a New Character  
+**Method:** `POST`  
+**Endpoint:** `/characters`  
+**cURL Command:**  
+```sh
+curl -X POST http://localhost:3000/characters -H "Content-Type: application/json" -d "{\"name\": \"Saitama\", \"age\": 25, \"anime\": \"One Punch Man\"}"
 ```
-Request Body:
-```json
-{
-  "name": "Sasuke Uchiha",
-  "age": 17,
-  "anime": "Naruto"
-}
-```
-Response:
+**Response:**  
 ```json
 {
   "id": 4,
-  "name": "Sasuke Uchiha",
-  "age": 17,
-  "anime": "Naruto"
+  "name": "Saitama",
+  "age": 25,
+  "anime": "One Punch Man"
 }
 ```
 
-### Update a Character by ID
-```http
-PUT /characters/:id
+### 🔹 Update a Character by ID  
+**Method:** `PUT`  
+**Endpoint:** `/characters/:id`  
+**Example:** Update character with ID 2  
+```sh
+curl -X PUT http://localhost:3000/characters/2 -H "Content-Type: application/json" -d "{\"name\": \"Monkey D. Luffy\", \"age\": 20, \"anime\": \"One Piece\"}"
 ```
-Request Body:
-```json
-{
-  "name": "Monkey D. Luffy",
-  "age": 20
-}
-```
-Response:
+**Response:**  
 ```json
 {
   "id": 2,
@@ -113,20 +119,23 @@ Response:
 }
 ```
 
-### Delete a Character by ID
-```http
-DELETE /characters/:id
+### 🔹 Delete a Character by ID  
+**Method:** `DELETE`  
+**Endpoint:** `/characters/:id`  
+**Example:** Delete character with ID 3  
+```sh
+curl -X DELETE http://localhost:3000/characters/3
 ```
-Response:
+**Response:**  
 ```json
 {
   "message": "Character deleted successfully"
 }
 ```
 
-## Dependencies
-- Express.js
-- Open (for automatically opening the browser)
+## Dependencies  
+- **Express.js** (for handling API requests)  
+- **Open** (for automatically opening the browser)
 
 ## License
 This project is licensed under the MIT License.
